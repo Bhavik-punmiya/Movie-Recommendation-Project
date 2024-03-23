@@ -1,17 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios'; // Import axios
 import Box from '@mui/material/Box';
 import InputBase from '@mui/material/InputBase';
 import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
 import Paper from '@mui/material/Paper';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardActions from '@mui/material/CardActions';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
 import MovieCard from '../component/card';
-const apiKey = 'Your TDMBAPI KEY ';
+const apiKey = '87fd974feb9f46fbd46d0db9f4e7930c';
 const baseUrl = 'https://api.themoviedb.org/3';
 const searchEndpoint = '/search/movie';
 
@@ -146,7 +141,7 @@ return (
      </Paper>
      <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 2 , padding: '0 10rem'}}>
        {movieDetails.map((movie, index) => (
-         <MovieCard key={index} title={movie.title} overview={movie.details.overview} poster_path={movie.details.poster_path} homepage={movie.details.homepage} />
+         <MovieCard key={index} title={movie.title} overview={movie.details.overview} poster_path={movie.details.poster_path} homepage={movie.details.homepage} date={movie.details.release_date}/>
        ))}
      </Box>
   </Box>
